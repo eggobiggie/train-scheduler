@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:300,400,600|Passion+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:300,400,600,800|Passion+One" rel="stylesheet">
     <!-- materialize framework -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <title>Train Scheduler</title>
@@ -25,14 +25,60 @@
             <div class="col s12">
                 <div class="section">
                     <p class="center-align amber lighten-2 trainTitle z-depth-5">Current Train Schedule</p>
-                    <div class="currentTrainBox amber lighten-5 z-depth-5"></div>
+                    <div class="currentTrainBox amber lighten-5 z-depth-5">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th class="center-align tableHeadText">Train Name</th>
+                                    <th class="center-align tableHeadText">Destination</th>    
+                                    <th class="center-align tableHeadText">Frequency (Min)</th>
+                                    <th class="center-align tableHeadText">Next Arrival</th>
+                                    <th class="center-align tableHeadText">Minutes Away</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="center-align">Polar Express</td>
+                                    <td class="center-align">North Pole</td>
+                                    <td class="center-align">400</td>
+                                    <td class="center-align">05:40 PM</td>
+                                    <td class="center-align">40</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col s12">
                 <p class="center-align  amber lighten-2 trainTitle z-depth-5">Add Train</p>
-                <div class="currentTrainBox amber lighten-5 z-depth-5"></div>
+                <div class="currentTrainBox addTrainBox amber lighten-5 z-depth-5">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input type="text">
+                            <label for="train-name">Train Name</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input type="text">
+                            <label for="train-name">Destination</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input type="text">
+                            <label for="train-name">First Train Time (24 Hour Format)</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input type="text">
+                            <label for="train-name">Frequency (Min)</label>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
