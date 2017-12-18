@@ -1,0 +1,28 @@
+body {
+    background: url("../images/subway-lines.png");
+}
+
+.header {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    /* border: 5px solid black; */
+    border-top: none;
+}
+
+h1,
+h4 {
+    font-family: 'Passion One', cursive;
+}
+
+.trainTitle {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.currentTrainBox {
+    height: 200px;
+}
+
