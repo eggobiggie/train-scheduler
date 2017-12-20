@@ -5,25 +5,27 @@ body {
 .header {
     padding-top: 10px;
     padding-bottom: 20px;
-    /* border: 5px solid black; */
+    margin-top: 30px;
     border-top: none;
 }
 
 h1,
 h4 {
     font-family: 'Passion One', cursive;
+
 }
 
 .trainTitle {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 800;
+    /* font-family: 'Barlow Condensed', sans-serif; */
+    font-family: 'Passion One', cursive;
+    /* font-weight: 600; */
     font-size: 30px;
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
 .currentTrainBox {
-    height: 400px;
+    height: 500px;
 }
 
 .addTrainBox {
@@ -34,4 +36,14 @@ h4 {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 600;
     font-size: 20px;
+}
+
+i.icon-black {
+    color: black;
+}
+
+button.add-train {
+    color: black;
+    font-family: 'Passion One', cursive;
+    font-size: 25px;
 }
