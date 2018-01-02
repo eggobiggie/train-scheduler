@@ -41,8 +41,6 @@
 
     database.ref().push(newTrain);
 
-    alert("Train successfully added");
-
     $("#train-input").val("");
     $("#destination-input").val("");
     $("#first-input").val("");
@@ -63,16 +61,30 @@
     console.log(firstTrain);
     console.log(frequency);
 
-    //add moment.js for time format
+    // Calculations for current time vs initial time of train vs train frequency
+    var initialTimeConverted = moment(firstTrain, "HH:mm").subtract(1, "years");
+    console.log(initialTimeConverted);
 
-    //then add the math to figure out frequency vs arrival time
+    var currentTime = moment();
+    console.log("Current time: " + moment(currentTime).format("HH:mm"));
 
-    //calculate time until arrival and console.log to confirm
+    var timeDiff = moment().diff(moment(initialTimeConverted), "minutes");
+    console.log("Time difference: " + timeDiff);
 
-    //add train's data to the table
+    var timeRemainder = timeDiff % frequency;
+    console.log(timeRemainder);
+
+    var minUntilTrain = frequency - timeRemainder;
+    console.log("Minutes until next train: " + minUntilTrain);
+
+    var nextTrain = moment().add(minUntilTrain, "minutes");
+
+    var nextTrainFormatted = moment(nextTrain).format("HH:mm");
+    console.log(nextTrainFormatted);
+
+    //Display the information onto the page
     $("#train-table > tbody").append("<tr><td class='center-align'>" + trainName + "</td><td class='center-align'>" + destination + "</td><td class='center-align'>" + frequency
-  + "</td><td class='center-align'>" + "time of arrival goes here" + "</td><td class='center-align'>" + "minutes away" + "</td></tr>");
-
+  + "</td><td class='center-align'>" + nextTrainFormatted + "</td><td class='center-align'>" + minUntilTrain + "</td></tr>");
 
   });
 
