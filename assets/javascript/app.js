@@ -27,17 +27,52 @@
     firstTrain = $("#first-input").val().trim();
     frequency = $("#frequency-input").val().trim();
 
+    var newTrain = {
+      train: trainName,
+      destination: destination,
+      first: firstTrain,
+      frequency: frequency
+    };
+
     console.log(trainName);
     console.log(destination);
     console.log(firstTrain);
     console.log(frequency);
 
-    database.ref().set({
-        train: trainName,
-        destination: destination,
-        first: firstTrain,
-        frequency: frequency
-    })
+    database.ref().push(newTrain);
+
+    alert("Train successfully added");
+
+    $("#train-input").val("");
+    $("#destination-input").val("");
+    $("#first-input").val("");
+    $("#frequency-input").val("");
+
+  });
+
+  database.ref().on("child_added", function(childSnapshot, prevChildkey) {
+    console.log(childSnapshot.val());
+
+    var trainName = childSnapshot.val().train;
+    var destination = childSnapshot.val().destination;
+    var firstTrain = childSnapshot.val().first;
+    var frequency = childSnapshot.val().frequency;
+
+    console.log(trainName);
+    console.log(destination);
+    console.log(firstTrain);
+    console.log(frequency);
+
+    //add moment.js for time format
+
+    //then add the math to figure out frequency vs arrival time
+
+    //calculate time until arrival and console.log to confirm
+
+    //add train's data to the table
+    $("#train-table > tbody").append("<tr><td class='center-align'>" + trainName + "</td><td class='center-align'>" + destination + "</td><td class='center-align'>" + frequency
+  + "</td><td class='center-align'>" + "time of arrival goes here" + "</td><td class='center-align'>" + "minutes away" + "</td></tr>");
+
 
   });
 
