@@ -16,16 +16,14 @@ h4 {
 }
 
 .trainTitle {
-    /* font-family: 'Barlow Condensed', sans-serif; */
     font-family: 'Passion One', cursive;
-    /* font-weight: 600; */
     font-size: 30px;
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
 .currentTrainBox {
-    height: 500px;
+    height: 100%;
 }
 
 .addTrainBox {
